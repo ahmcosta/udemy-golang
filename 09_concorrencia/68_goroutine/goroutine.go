@@ -22,7 +22,7 @@ func main() {
 	*/
 	// Forma concorrente (Go routine)
 	go fale("Maria", "Ei...", 500, "go routine")
-	go fale("João", "Opa...", 500, "go routine!")
+	go fale("João", "Opa...", 500, "go routine")
 
 	// Forma concorrente (Go routine)
 	go fale("Maria", "Entendi!!!", 10, "go routine")
