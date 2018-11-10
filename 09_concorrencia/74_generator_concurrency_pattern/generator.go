@@ -1,6 +1,7 @@
 /*
 	Google I/O 2012 - Go Concurrency Patterns
-	Generator Pattern: function tha returns a channel. That encapsules a goroutine call!
+	Generator Pattern: function that returns a channel. That encapsules a goroutine call!
+	More info in: https://talks.golang.org/2012/concurrency.slide#25
 */
 
 package main
