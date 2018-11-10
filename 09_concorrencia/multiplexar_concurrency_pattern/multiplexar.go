@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/cod3rcursos/html"
+	"github.com/ahmcosta/html"
 )
 
 func encaminhar(origem <-chan string, destino chan string) {
@@ -22,8 +22,8 @@ func juntar(entrada1, entrada2 <-chan string) <-chan string {
 
 func main() {
 	c := juntar(
-		html.Titulo("https://www.cod3r.com.br", "https://www.google.com"),
-		html.Titulo("https://www.amazon.com", "https://www.youtube.com"),
+		html.Title("https://www.cod3r.com.br", "https://www.google.com"),
+		html.Title("https://www.amazon.com", "https://www.youtube.com"),
 	)
 	fmt.Println(<-c, "|", <-c)
 	fmt.Println(<-c, "|", <-c)
