@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func isPrimo(num int) bool {
@@ -21,18 +20,19 @@ func primos(n int, c chan int) {
 			if isPrimo(primo) {
 				c <- primo
 				inicio = primo + 1
-				time.Sleep(time.Millisecond * 180)
+				// time.Sleep(time.Millisecond * 180)
 				break
 			}
 		}
 	}
-	close(c)
+	close(c) // Quando se termina a função é interessante que se feche o canal
 }
 
 func main() {
 	c := make(chan int, 30)
-	go primos(60, c)
-	for primo := range c {
+	go primos(100000, c)
+	// go primos(cap(c), c)
+	for primo := range c { // laço for sobre um canal
 		fmt.Printf("%d ", primo)
 	}
 	fmt.Println("Fim!")
