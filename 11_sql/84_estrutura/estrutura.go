@@ -3,6 +3,14 @@ package main
 import (
 	"database/sql"
 
+	/*
+		"_" doesn’t require to use package math in importing file but init function(s)
+		from imported package will be executed anyway (package and it dependencies
+		will be initialized). It’s useful if we’re interested only in bootstrapping
+		work done by imported package but we don’t reference any exported identifiers from it.
+
+		https://medium.com/golangspec/import-declarations-in-go-8de0fd3ae8ff
+	*/
 	_ "github.com/go-sql-driver/mysql" // implicit import
 )
 
